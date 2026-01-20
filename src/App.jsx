@@ -16,7 +16,7 @@ import FAQSection from '@/components/landing/FAQSection';
 import DemoFormSection from '@/components/landing/DemoFormSection';
 import Footer from '@/components/landing/Footer';
 import AnimatedBackground from '@/components/landing/AnimatedBackground';
-import CursorGlow from '@/components/landing/CursorGlow';
+import CursorGlow from '@/components/landing/Cursor';
 
 export default function Home() {
   return (
