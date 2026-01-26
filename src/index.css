@@ -40,6 +40,25 @@
       background-position: 0% 50%;
     }
   }
+
+  .gradient-border-show {
+    position: relative;
+  }
+
+  .gradient-border-show::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 4px;
+    background: linear-gradient(120deg, #00F260, #0575E6, #00F260);
+    background-size: 300% 300%;
+    -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+    z-index: -1;
+  }
 }
 
 @theme inline {
