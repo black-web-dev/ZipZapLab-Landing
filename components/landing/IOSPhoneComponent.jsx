@@ -28,16 +28,21 @@ import {
 const sidebarItems = [
   { icon: MessageSquare, label: 'Диалоги', active: true },
   { icon: BarChart3, label: 'Администрация', active: false },
-  { icon: Paperclip, label: 'Вес о записи', active: false },
-  { icon: Settings, label: 'Настройка', active: false },
+  { icon: Paperclip, label: 'Все записи', active: false },
+  { icon: Settings, label: 'Система', active: false },
   { icon: Menu, label: 'FAQ Ресурсы', active: false },
   { icon: User, label: 'Операторы', active: false },
 ];
 
 const messages = [
   {
+    type: 'user',
+    text: 'Как запрограммировать коммутатор KMF-6.1?',
+    initial: 'ЛМ'
+  },
+  {
     type: 'ai',
-    text: 'Для интеграции с CRM перейдите в Настройки → Интеграции → CRM. Подробная инструкция доступна в документации.',
+    text: 'Для программирования коммутатора KMF-6.1 необходимо выполнить следующие шаги:',
     items: [
       'Подключить к коммутатору линии LU и GND от блока вызова.',
       'Установить джампер на коммутаторе в положение 0 для перевода в режим программирования.',
@@ -47,10 +52,6 @@ const messages = [
     type: 'user',
     text: 'А, если нет напряжения?',
     initial: 'ЛМ'
-  },
-  {
-    type: 'ai',
-    text: '',
   },
 ];
 
@@ -91,7 +92,7 @@ export default function IOSPhoneComponent() {
         <div 
           className="absolute inset-0 blur-xl opacity-50 -z-10"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(153, 109, 208, 0.8) 0%, rgba(177, 141, 224, 0.8) 40%, transparent 80%)',
+            background: 'radial-gradient(ellipse at center, rgba(153, 109, 208, 0.8) 0%, rgba(177, 141, 224, 0.8) 40%, transparent 60%)',
             transform: 'scale(1.1)',
             top: '-10%',
             left: '-10%',
@@ -178,7 +179,7 @@ export default function IOSPhoneComponent() {
                     {/* Text Content */}
                     <div className="flex flex-col flex-1 min-w-0">
                       <span className="text-[12px] font-bold text-neutral-300/90 leading-tight">24/7</span>
-                      <span className="text-[9px] text-neutral-300/90 leading-tight mt-0.5">Закалист</span>
+                      <span className="text-[9px] text-neutral-300/90 leading-tight mt-0.5">Поддержка</span>
                     </div>
                   </div>
                 </div>
@@ -268,19 +269,19 @@ export default function IOSPhoneComponent() {
                   {/* First Section */}
                   <div className="flex flex-col items-center flex-1">
                     <p className="text-xl font-semibold text-[#8BE9FC] leading-tight">1,247</p>
-                    <p className="text-[9px] text-[#94a3b8] font-normal">Довгатане</p>
+                    <p className="text-[9px] text-[#94a3b8] font-normal">Диалогов</p>
                   </div>
 
                   {/* Second Section */}
                   <div className="flex flex-col items-center flex-1">
                     <p className="text-xl font-semibold text-[#9590CE] leading-tight">94.2%</p>
-                    <p className="text-[9px] text-[#94a3b8] font-normal">Темоакте</p>
+                    <p className="text-[9px] text-[#94a3b8] font-normal">Точность</p>
                   </div>
 
                   {/* Third Section */}
                   <div className="flex flex-col items-center flex-1">
-                    <p className="text-xl font-semibold text-[#A78BFA] leading-tight">2.3s</p>
-                    <p className="text-[9px] text-[#9E74D0] font-normal">Время ответа</p>
+                    <p className="text-xl font-semibold text-[#A78BFA] leading-tight">2.3c</p>
+                    <p className="text-[9px] text-[#9E74D0] font-normal">Ответ</p>
                   </div>
                 </div>
               </motion.div>
@@ -429,15 +430,15 @@ export default function IOSPhoneComponent() {
             <div className="flex justify-between">
               <div className='flex flex-col items-center'>
                 <p className="text-white font-medium text-sm">1,247</p>
-                <p className="text-neutral-400 text-[7px]">Достаточно</p>
+                <p className="text-neutral-400 text-[7px]">Диалогов</p>
               </div>
               <div className='flex flex-col items-center'>
                 <p className="text-white font-medium text-sm">94.2%</p>
                 <p className="text-neutral-400 text-[7px]">Точность</p>
               </div>
               <div className='flex flex-col items-center'>
-                <p className="text-white font-medium text-sm">2.3s</p>
-                <p className="text-neutral-400 text-[7px]">Время ответа</p>
+                <p className="text-white font-medium text-sm">2.3c</p>
+                <p className="text-neutral-400 text-[7px]">Ответ</p>
               </div>
             </div>
           </div>

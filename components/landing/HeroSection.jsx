@@ -48,12 +48,12 @@ export default function HeroSection() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <div className="w-fit flex items-center gap-1 rounded-full bg-[#996DD0]/10 text-[#996DD0] border border-[#996DD0] px-4 py-1.5 text-sm font-medium mb-6 cursor-default">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300 cursor-default">
                 <motion.div
                   animate={{ rotate: [0, 15, -15, 0] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 >
-                  <Sparkles className="w-3.5 h-3.5 mr-2" />
+                  <Sparkles className="w-4 h-4" />
                 </motion.div>
                 AI Support Agent
               </div>
@@ -98,7 +98,7 @@ export default function HeroSection() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-white/90 text-black font-semibold text-base h-12 px-8 shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 transition-all"
+                  className="h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5"
                 >
                   Запросить демо
                   <motion.div
@@ -111,7 +111,7 @@ export default function HeroSection() {
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <button
-                  className="border rounded-md border-[#996DD0] bg-transparent text-white hover:bg-[#996DD0]/10 hover:border-[#996DD0] h-12 px-8"
+                  className="inline-flex h-12 items-center rounded-xl border-2 border-cyan-400 px-7 py-3 text-base font-semibold text-cyan-200 transition hover:bg-cyan-400/10"
                 >
                   Админ‑панель
                 </button>
@@ -143,7 +143,7 @@ export default function HeroSection() {
       >
         {/* Background Image */}
         <div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 -z-10"
           style={{
             backgroundImage: 'url(/background.png)',
             backgroundSize: 'cover',

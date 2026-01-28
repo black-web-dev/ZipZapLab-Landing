@@ -175,7 +175,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply font-sans bg-[#0f172a] text-slate-100;
   }
 }
