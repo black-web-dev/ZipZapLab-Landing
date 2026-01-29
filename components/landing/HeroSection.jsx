@@ -110,6 +110,7 @@ export default function HeroSection() {
                 <Button
                   size="lg"
                   className="h-9 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-4 py-2 sm:px-7 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5"
+                  onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 >
                   Запросить демо
                   <motion.div
@@ -124,7 +125,10 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <button className="inline-flex h-9 sm:h-12 items-center rounded-lg sm:rounded-xl border-2 border-cyan-400 px-4 py-2 sm:px-7 sm:py-3 text-sm sm:text-base font-semibold text-cyan-200 transition hover:bg-cyan-400/10">
+                <button
+                  className="inline-flex h-9 sm:h-12 items-center rounded-lg sm:rounded-xl border-2 border-cyan-400 px-4 py-2 sm:px-7 sm:py-3 text-sm sm:text-base font-semibold text-cyan-200 transition hover:bg-cyan-400/10"
+                  onClick={() => document.getElementById('admin')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                >
                   Админ‑панель
                 </button>
               </motion.div>

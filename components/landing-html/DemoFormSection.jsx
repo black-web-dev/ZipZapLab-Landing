@@ -151,7 +151,7 @@ export default function DemoFormSection() {
   };
 
   return (
-    <section id="demo-form" className="py-12 sm:py-20">
+    <section id="demo" className="py-12 sm:py-20">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeader
           tag="Демо"

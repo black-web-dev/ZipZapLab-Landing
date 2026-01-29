@@ -62,12 +62,13 @@ const ctaClasses = {
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="bg-[#0B172A] py-12 sm:py-20 text-slate-100">
+    <section id="pricing" className="bg-white py-12 sm:py-20 text-slate-100">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeader
           tag="Тарифы"
           title="Выберите подходящий план"
           description="От пилота до enterprise — гибкие тарифы под ваши задачи и масштаб"
+          light
         />
         <div className="grid gap-6 lg:grid-cols-3">
           {plans.map((plan) => (
@@ -75,7 +76,7 @@ export default function PricingSection() {
               <div
                 className={[
                   'relative flex h-full flex-col rounded-xl border p-8',
-                  'bg-[#12223A] border-[#00BFFF]/80 shadow-[0_0_20px_rgba(0,191,255,0.08)]',
+                  'bg-[#1e293b] border-[#00BFFF]/80 shadow-[0_0_20px_rgba(0,191,255,0.08)]',
                   plan.featured ? 'border-[#00BFFF] shadow-[0_0_24px_rgba(0,191,255,0.15)]' : '',
                   plan.enterprise ? 'border-dashed' : '',
                 ].join(' ')}
@@ -85,15 +86,36 @@ export default function PricingSection() {
                     Популярный
                   </div>
                 ) : null}
-                <span className="mb-3 inline-block rounded-full bg-[#1C304A] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#D3D3D3]">
+                <span
+                  className="mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
+                  style={{
+                    backgroundColor: '#1E3F4A',
+                    backgroundImage: 'linear-gradient(135deg, #00E5FF, #00FFB0)',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    color: 'transparent',
+                    WebkitTextFillColor: 'transparent',
+                    filter: 'drop-shadow(0 0 8px rgba(0, 229, 255, 0.5)) drop-shadow(0 0 16px rgba(0, 255, 176, 0.25))',
+                  }}
+                >
                   {plan.badge}
                 </span>
                 <h3 className="text-xl font-bold text-white">{plan.name}</h3>
                 <p className="mt-2 text-sm text-[#A0AEC0]">{plan.desc}</p>
                 <div className="mt-6">
-                  <span className="text-3xl font-extrabold text-[#00FFB0]">
+                  <div
+                    className="text-3xl font-extrabold"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(135deg, #00E5FF, #00FFB0)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      color: "transparent",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
                     По запросу
-                  </span>
+                  </div>
                   <div className="text-sm text-[#A0AEC0]">свяжитесь с нами</div>
                 </div>
                 <div className="mt-6 flex-1">
@@ -102,7 +124,7 @@ export default function PricingSection() {
                   </h4>
                   <ul className="space-y-2 text-sm text-[#A0AEC0]">
                     {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2">
+                      <li key={feature} className="flex items-start gap-2 text-white">
                         <svg viewBox="0 0 24 24" className="mt-1 h-4 w-4 shrink-0 text-[#00FFB0]" fill="none" stroke="currentColor" strokeWidth="2">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>

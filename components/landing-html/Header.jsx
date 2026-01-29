@@ -137,8 +137,7 @@ export default function Header() {
               className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-400/30 active:opacity-90"
               onClick={(e) => {
                 e.preventDefault();
-                const el = document.querySelector('#demo');
-                el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 setOpen(false);
               }}
             >

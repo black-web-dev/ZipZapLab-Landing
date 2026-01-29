@@ -22,7 +22,7 @@ const featureCards = [
 
 export default function VideoSection() {
   return (
-    <section id="demo" className="relative py-16 sm:py-20 lg:py-32 overflow-hidden">
+    <section id="video" className="relative py-16 sm:py-20 lg:py-32 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
