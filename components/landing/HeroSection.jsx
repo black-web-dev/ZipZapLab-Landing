@@ -24,7 +24,7 @@ export default function HeroSection() {
   const revealImgRef = useRef(null);
 
   return (
-    <section className="relative min-h-screen">
+    <section className="relative min-h-screen flex flex-col-reverse lg:flex-row">
       {/* Floating Elements */}
       <motion.div
         animate={{
@@ -40,7 +40,7 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
-      <div className="relative z-0 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div className="relative z-0 w-full max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-8 -mt-10 lg:mt-0 pt-0 pb-12 sm:pb-16 lg:py-32">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Content */}
           <motion.div
@@ -53,18 +53,18 @@ export default function HeroSection() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300 cursor-default">
+              <div className="hidden lg:inline-flex mb-3 sm:mb-5 items-center gap-1.5 sm:gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-cyan-300 cursor-default">
                 <motion.div
                   animate={{ rotate: [0, 15, -15, 0] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 >
-                  <Sparkles className="w-4 h-4" />
+                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
                 </motion.div>
                 AI Support Agent
               </div>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6">
+            <h1 className="hidden lg:block text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-200 bg-clip-text text-transparent">
                 ZipZap Agent
               </span>
@@ -72,31 +72,33 @@ export default function HeroSection() {
               <span className="text-neutral-100">агент техподдержки</span>
             </h1>
 
-            <p className="text-lg sm:text-2xl text-neutral-400 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-sm sm:text-base lg:text-2xl text-neutral-400 leading-relaxed mb-5 sm:mb-8 max-w-xl sm:max-w-2xl">
               Работает в Telegram и на сайте, поддерживает текст и голос, даёт
               управляемое качество: пороги релевантности, FAQ-first, логи и
               мониторинг.
             </p>
 
-            <ul className="space-y-2 mb-10">
+            <ul className="space-y-1.5 sm:space-y-2 mb-6 sm:mb-10">
               {features.map((feature, idx) => (
                 <motion.li
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 + idx * 0.1 }}
-                  className="flex items-start gap-3"
+                  className="flex items-start gap-2 sm:gap-3"
                 >
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-neutral-700/80 flex items-center justify-center mt-0.5">
-                    <Check className="w-3 h-3 text-white" />
+                  <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-neutral-700/80 flex items-center justify-center mt-0.5">
+                    <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
                   </div>
-                  <span className="text-neutral-300 text-base">{feature}</span>
+                  <span className="text-neutral-300 text-xs sm:text-sm lg:text-base">
+                    {feature}
+                  </span>
                 </motion.li>
               ))}
             </ul>
 
             <motion.div
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-2 sm:gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
@@ -107,14 +109,14 @@ export default function HeroSection() {
               >
                 <Button
                   size="lg"
-                  className="h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5"
+                  className="h-9 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-4 py-2 sm:px-7 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5"
                 >
                   Запросить демо
                   <motion.div
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1.5 sm:ml-2" />
                   </motion.div>
                 </Button>
               </motion.div>
@@ -122,7 +124,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <button className="inline-flex h-12 items-center rounded-xl border-2 border-cyan-400 px-7 py-3 text-base font-semibold text-cyan-200 transition hover:bg-cyan-400/10">
+                <button className="inline-flex h-9 sm:h-12 items-center rounded-lg sm:rounded-xl border-2 border-cyan-400 px-4 py-2 sm:px-7 sm:py-3 text-sm sm:text-base font-semibold text-cyan-200 transition hover:bg-cyan-400/10">
                   Админ‑панель
                 </button>
               </motion.div>
@@ -132,7 +134,7 @@ export default function HeroSection() {
       </div>
 
       <div
-        className="h-[110%] w-2/3 absolute top-0 left-1/3 right-0 overflow-hidden"
+        className="h-full lg:h-[110%] w-full lg:w-2/3 relative lg:absolute lg:top-0 lg:left-1/3 lg:right-0 overflow-hidden"
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
           const x = e.clientX - rect.left;
@@ -170,12 +172,32 @@ export default function HeroSection() {
           }}
         />
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[130%] h-full">
+        <div className="lg:hidden absolute top-0 left-1/2 -translate-x-1/2 w-[400%] h-[50%]">
+          <LaserFlow
+            horizontalBeamOffset={0}
+            verticalBeamOffset={0.015}
+            horizontalSizing={0.4}
+            verticalSizing={0.9}
+            flowStrength={0.2}
+            fogIntensity={0.2}
+            fogScale={0.5}
+            fogFallSpeed={0.5}
+            wispIntensity={0.6}
+            falloffStart={0.6}
+            flowSpeed={0.2}
+            wispSpeed={15}
+            wispDensity={8}
+            decay={0.5}
+            color="#B18DE0"
+          />
+        </div>
+
+        <div className="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 w-[130%] h-full">
           <LaserFlow
             horizontalBeamOffset={0.078}
             verticalBeamOffset={0.36}
             horizontalSizing={0.4}
-            verticalSizing={0.55}
+            verticalSizing={0.8}
             flowStrength={0.15}
             fogIntensity={0.2}
             fogScale={0.5}
@@ -190,26 +212,49 @@ export default function HeroSection() {
           />
         </div>
 
-        <div
-          style={{
-            position: "absolute",
-            top: "13%",
-            left: "60%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            fontSize: "2rem",
-            zIndex: 6,
-          }}
-        >
+        <div className="relative py-24 lg:py-0 lg:absolute w-full lg:w-full lg:top-[13%] left-1/2 lg:left-[60%] -translate-x-1/2 flex flex-col lg:flex-row items-center justify-center text-white text-sm sm:text-2xl z-[6]">
+          <div className="lg:hidden w-[90%] px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="mb-3 sm:mb-5 inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-cyan-300 cursor-default">
+                  <motion.div
+                    animate={{ rotate: [0, 15, -15, 0] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                    }}
+                  >
+                    <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
+                  </motion.div>
+                  AI Support Agent
+                </div>
+              </motion.div>
+
+              <h1 className="text-2xl sm:text-4xl font-bold text-white leading-[1.1] mb-6 sm:mb-10">
+                <span className="bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-200 bg-clip-text text-transparent">
+                  ZipZap Agent
+                </span>
+                <br />
+                <span className="text-neutral-100">агент техподдержки</span>
+              </h1>
+            </motion.div>
+          </div>
+
           {/* iOS Phone Component */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px] mx-auto"
           >
             <IOSPhoneComponent />
           </motion.div>

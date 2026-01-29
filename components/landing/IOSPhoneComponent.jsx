@@ -84,7 +84,7 @@ const particles = generateParticles();
 export default function IOSPhoneComponent() {
 
   return (
-    <div className="relative w-full max-w-[380px] mx-auto">
+    <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px] mx-auto">
 
       {/* iOS Device Frame */}
       <div className="relative z-10">
@@ -112,23 +112,23 @@ export default function IOSPhoneComponent() {
 
         {/* Screen Content - positioned absolutely over the device */}
         <div
-          className="absolute top-5 left-5 right-5 bottom-5 flex flex-col z-10"
+          className="absolute top-3 left-3 right-3 bottom-3 lg:top-5 lg:left-5 lg:right-5 lg:bottom-5 flex flex-col z-10"
           style={{ clipPath: 'url(#viewport-mask1)' }}
         >
-          <div className="flex items-center justify-between px-2 pt-10 pb-2 bg-linear-to-r from-[#0F0E20] via-[#1B1430] to-[#0F0E20]">
-            <div className="flex gap-2">
-              <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+          <div className="flex items-center justify-between px-1 sm:px-2 pt-6 sm:pt-8 lg:pt-10 pb-1 sm:pb-2 bg-linear-to-r from-[#0F0E20] via-[#1B1430] to-[#0F0E20]">
+            <div className="flex gap-1 sm:gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-red-500"></div>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-yellow-500"></div>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-green-500"></div>
             </div>
-            <h3 className="text-[#f5f5f5a4] text-[10px] font-medium text-center flex-1">ZipZap Agent - Панель управления</h3>
-            <div className="w-8"></div>
+            <h3 className="text-[#f5f5f5a4] text-[7px] sm:text-[8px] lg:text-[10px] font-medium text-center flex-1">ZipZap Agent - Панель управления</h3>
+            <div className="w-4 sm:w-6 lg:w-8"></div>
           </div>
 
           {/* Main Content Area */}
-          <div className="flex-1 flex overflow-hidden rounded-b-[40px]">
+          <div className="flex-1 flex overflow-hidden rounded-b-[24px] sm:rounded-b-[32px] lg:rounded-b-[40px]">
             {/* Sidebar */}
-            <div className="w-[110px] bg-linear-to-br from-[#18537B]/50 via-[#202451]/50 to-[#45206A]/50 from backdrop-blur-md border-r border-black/10 flex flex-col py-7">
+            <div className="w-[72px] sm:w-[88px] lg:w-[110px] bg-linear-to-br from-[#18537B]/50 via-[#202451]/50 to-[#45206A]/50 from backdrop-blur-md border-r border-black/10 flex flex-col py-3 sm:py-5 lg:py-7">
               {sidebarItems.map((item, idx) => {
                 const Icon = item.icon;
                 return (
@@ -137,7 +137,7 @@ export default function IOSPhoneComponent() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.2 }}
-                    className="relative flex flex-row items-center gap-2 py-2 px-2 mx-0.5 cursor-pointer group"
+                    className="relative flex flex-row items-center gap-1 sm:gap-1.5 lg:gap-2 py-1 sm:py-1.5 lg:py-2 px-1 sm:px-2 mx-0.5 cursor-pointer group"
                   >
                     {item.active && (
                       <motion.div
@@ -147,14 +147,14 @@ export default function IOSPhoneComponent() {
                       ><div className='absolute inset-px rounded-sm bg-[#353457a1]'></div></motion.div>
                     )}
                     <Icon
-                      className={`w-4 h-4 relative z-10 shrink-0 drop-shadow-[0_0_4px_rgba(139,233,252,0.6)] ${item.active
+                      className={`w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 relative z-10 shrink-0 drop-shadow-[0_0_4px_rgba(139,233,252,0.6)] ${item.active
                         ? 'text-[#8BE9FC]'
                         : 'text-neutral-300/90 group-hover:text-neutral-300'
                         }`}
                     />
                     <span className={`leading-tight relative z-10 ${item.active
-                      ? 'text-[10px] text-[#8BE9FC] font-bold'
-                      : 'text-[9px] text-neutral-300/90'
+                      ? 'text-[7px] sm:text-[8px] lg:text-[10px] text-[#8BE9FC] font-bold'
+                      : 'text-[6px] sm:text-[7px] lg:text-[9px] text-neutral-300/90'
                       }`}>
                       {item.label}
                     </span>
@@ -166,20 +166,20 @@ export default function IOSPhoneComponent() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.0 }}
-                className="mt-auto mx-1.5 mb-3"
+                className="mt-auto mx-1 sm:mx-1.5 mb-2 sm:mb-3"
               >
                 <div 
                   className="relative rounded-md bg-linear-to-r from-[#18537B]/50 to-transparent p-px"
                 >
-                  <div className="flex items-center gap-2.5 bg-[#353457d5] rounded-md p-1">
+                  <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-2.5 bg-[#353457d5] rounded-md p-0.5 sm:p-1">
                     {/* Person Icon */}
-                    <div className="shrink-0 border border-[#8BE9FC]/90 rounded-full p-1">
-                      <User className="w-5 h-5 text-[#8BE9FC] drop-shadow-[0_0_4px_rgba(139,233,252,0.6)]" />
+                    <div className="shrink-0 border border-[#8BE9FC]/90 rounded-full p-0.5 sm:p-1">
+                      <User className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[#8BE9FC] drop-shadow-[0_0_4px_rgba(139,233,252,0.6)]" />
                     </div>
                     {/* Text Content */}
                     <div className="flex flex-col flex-1 min-w-0">
-                      <span className="text-[12px] font-bold text-neutral-300/90 leading-tight">24/7</span>
-                      <span className="text-[9px] text-neutral-300/90 leading-tight mt-0.5">Поддержка</span>
+                      <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-bold text-neutral-300/90 leading-tight">24/7</span>
+                      <span className="text-[6px] sm:text-[7px] lg:text-[9px] text-neutral-300/90 leading-tight mt-0.5">Поддержка</span>
                     </div>
                   </div>
                 </div>
@@ -208,35 +208,35 @@ export default function IOSPhoneComponent() {
                 ))}
               </div>
               {/* Messages */}
-              <div className="flex flex-col justify-end p-2 space-y-2.5 overflow-y-auto h-full pb-36">
+              <div className="flex flex-col justify-end p-1 sm:p-1.5 lg:p-2 space-y-1.5 sm:space-y-2 lg:space-y-2.5 overflow-y-auto h-full pb-24 sm:pb-28 lg:pb-36">
                 {messages.map((msg, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7 + idx * 0.2 }}
-                    className={`flex gap-1.5 items-start ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
+                    className={`flex gap-1 sm:gap-1.5 items-start ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
                   >
                     {msg.type === 'ai' && (
-                      <div className="w-6 h-6 rounded-full bg-[#1FA0D5] flex items-center justify-center shrink-0 mb-1">
-                        <span className="text-black text-[10px] font-bold">AI</span>
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 rounded-full bg-[#1FA0D5] flex items-center justify-center shrink-0 mb-0.5 sm:mb-1">
+                        <span className="text-black text-[6px] sm:text-[8px] lg:text-[10px] font-bold">AI</span>
                       </div>
                     )}
-                    <div className={`max-w-[72%] h-full min-h-[30px] rounded-md p-px ${msg.type === 'ai'
+                    <div className={`max-w-[72%] h-full min-h-[22px] sm:min-h-[26px] lg:min-h-[30px] rounded-md p-px ${msg.type === 'ai'
                       ? 'bg-linear-to-tr from-[#48739A] to-[#202441]'
                       : 'bg-linear-to-br from-[#202441] to-[#6F4D91]'
                       }`}>
-                      <div className={`flex flex-col justify-center w-full h-full rounded-md px-2.5 py-2 ${msg.type === 'ai'
+                      <div className={`flex flex-col justify-center w-full h-full rounded-md px-1.5 py-1 sm:px-2 sm:py-1.5 lg:px-2.5 lg:py-2 ${msg.type === 'ai'
                         ? 'bg-[linear-gradient(70deg,rgba(24,83,123,0.9),20%,#1B1B36)] text-[#f5f5f5]'
                         : 'bg-[linear-gradient(100deg,#1B1B36,60%,rgba(69,32,106,0.5))] text-[#f5f5f5]'
                         }`}>
                         {msg.text ? (
-                          <p className="text-[10px] leading-relaxed text-neutral-300">{msg.text}</p>
+                          <p className="text-[7px] sm:text-[8px] lg:text-[10px] leading-relaxed text-neutral-300">{msg.text}</p>
                         ) : (
                           <TypingIndicator color="#f5f5f5" size={4} spacing={3} />
                         )}
                         {msg.items && (
-                          <ul className="mt-1.5 space-y-1 text-[10px] opacity-90 list-none">
+                          <ul className="mt-1 sm:mt-1.5 space-y-0.5 sm:space-y-1 text-[7px] sm:text-[8px] lg:text-[10px] opacity-90 list-none">
                             {msg.items.map((item, i) => (
                               <li key={i} className="leading-relaxed">
                                 <div className='flex gap-1'>
@@ -250,8 +250,8 @@ export default function IOSPhoneComponent() {
                       </div>
                     </div>
                     {msg.type === 'user' && (
-                      <div className="w-6 h-6 rounded-full bg-[#6029DC] flex items-center justify-center shrink-0 mb-1">
-                        <span className="text-[#f5f5f5] text-[10px] font-medium">{msg.initial}</span>
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 rounded-full bg-[#6029DC] flex items-center justify-center shrink-0 mb-0.5 sm:mb-1">
+                        <span className="text-[#f5f5f5] text-[7px] sm:text-[8px] lg:text-[10px] font-medium">{msg.initial}</span>
                       </div>
                     )}
                   </motion.div>
@@ -263,25 +263,25 @@ export default function IOSPhoneComponent() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.5 }}
-                className="absolute bottom-10 left-2 right-2 rounded-lg p-px bg-linear-to-r from-[#48739A] via-[#202441] to-[#6F4D91]"
+                className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-1 right-1 sm:left-2 sm:right-2 rounded-md sm:rounded-lg p-px bg-linear-to-r from-[#48739A] via-[#202441] to-[#6F4D91]"
               >
-                <div className="rounded-[10px] py-3 flex justify-between items-center gap-2 backdrop-blur-sm bg-linear-to-r from-[#18537B]/50 via-[#202451]/90 to-[#45206A]/50">
+                <div className="rounded-[6px] sm:rounded-[10px] py-2 sm:py-2.5 lg:py-3 flex justify-between items-center gap-1 sm:gap-2 backdrop-blur-sm bg-linear-to-r from-[#18537B]/50 via-[#202451]/90 to-[#45206A]/50">
                   {/* First Section */}
                   <div className="flex flex-col items-center flex-1">
-                    <p className="text-xl font-semibold text-[#8BE9FC] leading-tight">1,247</p>
-                    <p className="text-[9px] text-[#94a3b8] font-normal">Диалогов</p>
+                    <p className="text-sm sm:text-base lg:text-xl font-semibold text-[#8BE9FC] leading-tight">1,247</p>
+                    <p className="text-[6px] sm:text-[7px] lg:text-[9px] text-[#94a3b8] font-normal">Диалогов</p>
                   </div>
 
                   {/* Second Section */}
                   <div className="flex flex-col items-center flex-1">
-                    <p className="text-xl font-semibold text-[#9590CE] leading-tight">94.2%</p>
-                    <p className="text-[9px] text-[#94a3b8] font-normal">Точность</p>
+                    <p className="text-sm sm:text-base lg:text-xl font-semibold text-[#9590CE] leading-tight">94.2%</p>
+                    <p className="text-[6px] sm:text-[7px] lg:text-[9px] text-[#94a3b8] font-normal">Точность</p>
                   </div>
 
                   {/* Third Section */}
                   <div className="flex flex-col items-center flex-1">
-                    <p className="text-xl font-semibold text-[#A78BFA] leading-tight">2.3c</p>
-                    <p className="text-[9px] text-[#9E74D0] font-normal">Ответ</p>
+                    <p className="text-sm sm:text-base lg:text-xl font-semibold text-[#A78BFA] leading-tight">2.3c</p>
+                    <p className="text-[6px] sm:text-[7px] lg:text-[9px] text-[#9E74D0] font-normal">Ответ</p>
                   </div>
                 </div>
               </motion.div>
@@ -295,12 +295,12 @@ export default function IOSPhoneComponent() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="absolute top-24 -right-2 rounded-lg px-3 py-2 flex items-center gap-2 z-20 bg-linear-to-br from-[#7FB1AE]/50 via-[#223640]/40 to-[#7FB1AE]/50 border border-[#546E71] shadow-[0_0_6px_2px_rgba(37,171,179,0.5)] backdrop-blur-sm"
+          className="absolute top-14 sm:top-20 lg:top-24 -right-1 sm:-right-2 rounded-md sm:rounded-lg px-2 py-1.5 sm:px-3 sm:py-2 flex items-center gap-1 sm:gap-2 z-20 bg-linear-to-br from-[#7FB1AE]/50 via-[#223640]/40 to-[#7FB1AE]/50 border border-[#546E71] shadow-[0_0_6px_2px_rgba(37,171,179,0.5)] backdrop-blur-sm"
         >
-          <Smile className="w-6 h-6 text-[#73E79A]" />
+          <Smile className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-[#73E79A]" />
           <div className="flex flex-col">
-            <span className="text-lg font-bold leading-tight text-[#73E79A]" >99.9%</span>
-            <span className="text-[10px] leading-tight text-white">Uptime</span>
+            <span className="text-xs sm:text-sm lg:text-lg font-bold leading-tight text-[#73E79A]" >99.9%</span>
+            <span className="text-[7px] sm:text-[8px] lg:text-[10px] leading-tight text-white">Uptime</span>
           </div>
         </motion.div>
 
@@ -309,29 +309,29 @@ export default function IOSPhoneComponent() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2 }}
-          className="absolute bottom-[28%] -left-18 rounded-lg overflow-hidden z-20 w-[240px] border-[1.5px] border-[#24787c] shadow-[0_0_10px_5px_rgba(37,171,179,0.3)]"
+          className="absolute bottom-[22%] sm:bottom-[26%] lg:bottom-[28%] -left-8 sm:-left-12 lg:-left-18 rounded-md sm:rounded-lg overflow-hidden z-20 w-[140px] sm:w-[180px] lg:w-[240px] border border-[#24787c] sm:border-[1.5px] shadow-[0_0_10px_5px_rgba(37,171,179,0.3)]"
         >
           <div
-            className="w-full h-full p-2 bg-[linear-gradient(120deg,rgba(74,95,150,0.3),80%,rgba(76,115,111,0.8))] backdrop-blur-sm"
+            className="w-full h-full p-1 sm:p-1.5 lg:p-2 bg-[linear-gradient(120deg,rgba(74,95,150,0.3),80%,rgba(76,115,111,0.8))] backdrop-blur-sm"
           >
             {/* Header */}
-            <div className="flex items-center justify-between mb-3">
-              <h4 className="text-white text-xs">
+            <div className="flex items-center justify-between mb-1.5 sm:mb-2 lg:mb-3">
+              <h4 className="text-white text-[9px] sm:text-[10px] lg:text-xs">
                 Аналитика
               </h4>
               <div className="flex items-center">
-                <button className="px-1.5 py-0.5 bg-[#444C63]/60 backdrop-blur-sm border border-neutral-700/50 rounded-l-[3px] text-[8px] text-neutral-300 hover:text-white transition-colors">
+                <button className="px-1 py-0.5 sm:px-1.5 sm:py-0.5 bg-[#444C63]/60 backdrop-blur-sm border border-neutral-700/50 rounded-l-[3px] text-[6px] sm:text-[7px] lg:text-[8px] text-neutral-300 hover:text-white transition-colors">
                   Rate
                 </button>
-                <button className="px-1.5 py-0.5 bg-[#2D344F]/60 backdrop-blur-sm border border-neutral-700/50 rounded-r-[3px] text-[8px] text-neutral-300 hover:text-white transition-colors flex items-center gap-1">
+                <button className="px-1 py-0.5 sm:px-1.5 sm:py-0.5 bg-[#2D344F]/60 backdrop-blur-sm border border-neutral-700/50 rounded-r-[3px] text-[6px] sm:text-[7px] lg:text-[8px] text-neutral-300 hover:text-white transition-colors flex items-center gap-0.5 sm:gap-1">
                   Reply
-                  <ChevronDown className="w-3 h-3" />
+                  <ChevronDown className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                 </button>
               </div>
             </div>
 
             {/* Graph Visualization */}
-            <div className="relative h-20">
+            <div className="relative h-12 sm:h-16 lg:h-20">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                   data={chartData}
@@ -370,20 +370,20 @@ export default function IOSPhoneComponent() {
                     type="number"
                     domain={[0, 120]}
                     ticks={[0, 20, 40, 60, 80, 100, 120]}
-                    tick={{ fill: 'rgba(156, 163, 175, 0.7)', fontSize: 7, fontFamily: 'system-ui, -apple-system' }}
+                    tick={{ fill: 'rgba(156, 163, 175, 0.7)', fontSize: 5, fontFamily: 'system-ui, -apple-system' }}
                     axisLine={false}
                     tickLine={false}
-                    tickMargin={5}
+                    tickMargin={3}
                   />
                   <YAxis
                     type="number"
                     domain={[0, 200]}
                     ticks={[0, 50, 100, 150, 200]}
-                    tick={{ fill: 'rgba(156, 163, 175, 0.7)', fontSize: 7, fontFamily: 'system-ui, -apple-system' }}
+                    tick={{ fill: 'rgba(156, 163, 175, 0.7)', fontSize: 5, fontFamily: 'system-ui, -apple-system' }}
                     axisLine={false}
                     tickLine={false}
-                    tickMargin={5}
-                    width={20}
+                    tickMargin={3}
+                    width={14}
                   />
                   {/* Horizontal grid lines at each Y-axis tick value */}
                   <ReferenceLine y={0} stroke="rgba(139, 92, 246, 0.2)" strokeWidth={0.5} />
@@ -427,18 +427,18 @@ export default function IOSPhoneComponent() {
             </div>
 
             {/* Stats */}
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-0.5 sm:gap-1">
               <div className='flex flex-col items-center'>
-                <p className="text-white font-medium text-sm">1,247</p>
-                <p className="text-neutral-400 text-[7px]">Диалогов</p>
+                <p className="text-white font-medium text-[9px] sm:text-[10px] lg:text-sm">1,247</p>
+                <p className="text-neutral-400 text-[5px] sm:text-[6px] lg:text-[7px]">Диалогов</p>
               </div>
               <div className='flex flex-col items-center'>
-                <p className="text-white font-medium text-sm">94.2%</p>
-                <p className="text-neutral-400 text-[7px]">Точность</p>
+                <p className="text-white font-medium text-[9px] sm:text-[10px] lg:text-sm">94.2%</p>
+                <p className="text-neutral-400 text-[5px] sm:text-[6px] lg:text-[7px]">Точность</p>
               </div>
               <div className='flex flex-col items-center'>
-                <p className="text-white font-medium text-sm">2.3c</p>
-                <p className="text-neutral-400 text-[7px]">Ответ</p>
+                <p className="text-white font-medium text-[9px] sm:text-[10px] lg:text-sm">2.3c</p>
+                <p className="text-neutral-400 text-[5px] sm:text-[6px] lg:text-[7px]">Ответ</p>
               </div>
             </div>
           </div>

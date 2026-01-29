@@ -32,11 +32,11 @@ export default function Header() {
             : 'bg-transparent'
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8">
+          <div className="flex items-center justify-between h-12 sm:h-14 lg:h-20">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2.5 group">
-              <img src="/logo.png" alt="ZipZap Lab" className="h-16 w-auto select-none" draggable="false" />
+            <a href="#" className="flex items-center gap-2 group">
+              <img src="/logo.png" alt="ZipZap Lab" className="h-8 sm:h-10 lg:h-16 w-auto select-none" draggable="false" />
             </a>
 
             {/* Desktop Navigation */}
@@ -89,10 +89,10 @@ export default function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-0 top-16 z-40 lg:hidden"
+            className="fixed inset-x-0 top-12 sm:top-14 lg:top-16 z-40 lg:hidden"
           >
-            <div className="bg-neutral-900/95 backdrop-blur-xl border-b border-neutral-800 p-4">
-              <nav className="flex flex-col gap-2">
+            <div className="bg-neutral-900/95 backdrop-blur-xl border-b border-neutral-800 p-3 sm:p-4">
+              <nav className="flex flex-col gap-1 sm:gap-2">
                 {navItems.map((item) => (
                   <a
                     key={item.label}
@@ -105,16 +105,16 @@ export default function Header() {
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       }
                     }}
-                    className="px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-300"
+                    className="px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-300"
                   >
                     {item.label}
                   </a>
                 ))}
-                <div className="pt-4 border-t border-neutral-800 mt-2 space-y-2">
-                  <button className="w-full justify-start text-left px-4 py-2 text-neutral-300 hover:text-white! hover:bg-white/5 rounded-md transition-all font-medium">
+                <div className="pt-3 sm:pt-4 border-t border-neutral-800 mt-1.5 sm:mt-2 space-y-1.5 sm:space-y-2">
+                  <button className="w-full justify-start text-left px-3 py-2 sm:px-4 text-sm sm:text-base text-neutral-300 hover:text-white! hover:bg-white/5 rounded-md transition-all font-medium">
                     Админ‑панель
                   </button>
-                  <Button className="w-full bg-white hover:bg-white/90 text-black font-semibold transition-all">
+                  <Button className="w-full text-sm sm:text-base bg-white hover:bg-white/90 text-black font-semibold transition-all py-2 sm:py-2.5">
                     Запросить демо
                   </Button>
                 </div>
