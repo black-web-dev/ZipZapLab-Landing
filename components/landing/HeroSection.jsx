@@ -24,7 +24,7 @@ export default function HeroSection() {
   const revealImgRef = useRef(null);
 
   return (
-    <section className="relative min-h-screen flex flex-col-reverse lg:flex-row">
+    <section id="hero" className="relative min-h-screen flex flex-col-reverse lg:flex-row">
       {/* Floating Elements */}
       <motion.div
         animate={{
@@ -270,7 +270,8 @@ export default function HeroSection() {
           alt="Reveal effect"
           style={{
             position: "absolute",
-            width: "100%",
+            width: "110%",
+            maxWidth: "110%",
             top: "0%",
             zIndex: 5,
             mixBlendMode: "lighten",
