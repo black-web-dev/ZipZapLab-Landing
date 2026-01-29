@@ -26,7 +26,7 @@ export default function AnimatedBackground() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full blur-[120px]"
+        className="hidden md:block absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full blur-[120px]"
       />
       
       <motion.div
@@ -48,7 +48,7 @@ export default function AnimatedBackground() {
           ease: "easeInOut",
           delay: 2
         }}
-        className="absolute top-1/3 right-1/4 w-[900px] h-[900px] rounded-full blur-[130px]"
+        className="hidden md:block absolute top-1/3 right-1/4 w-[900px] h-[900px] rounded-full blur-[130px]"
       />
       
       <motion.div
@@ -70,7 +70,7 @@ export default function AnimatedBackground() {
           ease: "easeInOut",
           delay: 4
         }}
-        className="absolute bottom-1/4 left-1/3 w-[700px] h-[700px] rounded-full blur-[110px]"
+        className="hidden md:block absolute bottom-1/4 left-1/3 w-[700px] h-[700px] rounded-full blur-[110px]"
       />
 
       <motion.div
@@ -85,12 +85,12 @@ export default function AnimatedBackground() {
           ease: "easeInOut",
           delay: 1
         }}
-        className="absolute top-2/3 right-1/3 w-[600px] h-[600px] rounded-full blur-[100px]"
+        className="hidden md:block absolute top-2/3 right-1/3 w-[600px] h-[600px] rounded-full blur-[100px]"
         style={{ background: 'radial-gradient(circle, hsla(260, 85%, 65%, 0.12), hsla(220, 80%, 60%, 0.06), transparent)' }}
       />
       
       {/* Animated SVG Shapes */}
-      <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+      <svg className="hidden md:block absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" style={{ stopColor: '#94a3b8', stopOpacity: 0.2 }} />
