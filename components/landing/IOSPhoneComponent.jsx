@@ -128,7 +128,7 @@ export default function IOSPhoneComponent() {
           {/* Main Content Area */}
           <div className="flex-1 flex overflow-hidden rounded-b-[24px] sm:rounded-b-[32px] lg:rounded-b-[40px]">
             {/* Sidebar */}
-            <div className="w-[72px] sm:w-[88px] lg:w-[110px] bg-linear-to-br from-[#18537B]/50 via-[#202451]/50 to-[#45206A]/50 from backdrop-blur-md border-r border-black/10 flex flex-col py-3 sm:py-5 lg:py-7">
+            <div className="w-[72px] sm:w-[92px] lg:w-[110px] bg-linear-to-br from-[#18537B]/50 via-[#202451]/50 to-[#45206A]/50 from backdrop-blur-md border-r border-black/10 flex flex-col py-3 sm:py-5 lg:py-7">
               {sidebarItems.map((item, idx) => {
                 const Icon = item.icon;
                 return (
@@ -171,7 +171,7 @@ export default function IOSPhoneComponent() {
                 <div 
                   className="relative rounded-md bg-linear-to-r from-[#18537B]/50 to-transparent p-px"
                 >
-                  <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-2.5 bg-[#353457d5] rounded-md p-0.5 sm:p-1">
+                  <div className="flex items-center gap-1 lg:gap-2.5 bg-[#353457d5] rounded-md p-0.5 sm:p-1">
                     {/* Person Icon */}
                     <div className="shrink-0 border border-[#8BE9FC]/90 rounded-full p-0.5 sm:p-1">
                       <User className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[#8BE9FC] drop-shadow-[0_0_4px_rgba(139,233,252,0.6)]" />

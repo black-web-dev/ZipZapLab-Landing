@@ -285,20 +285,6 @@ export default function HeroSection() {
             WebkitMaskRepeat: "no-repeat",
             maskRepeat: "no-repeat",
           }}
-          horizontalBeamOffset={0.27}
-          verticalBeamOffset={0.34}
-          horizontalSizing={0.15}
-          verticalSizing={1}
-          flowStrength={0.25}
-          fogIntensity={1.3}
-          fogScale={0.2}
-          fogFallSpeed={0.6}
-          wispIntensity={0.5}
-          falloffStart={0.5}
-          flowSpeed={0.2}
-          wispSpeed={15}
-          wispDensity={4}
-          decay={0.5}
         />
       </div>
 
