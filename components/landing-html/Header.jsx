@@ -47,12 +47,12 @@ export default function Header() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${isScrolled
+      className={`fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)] transition-all duration-500 ${isScrolled
           ? 'border-b border-white/5 bg-[#0f172a]/90 backdrop-blur shadow-lg shadow-black/10'
           : 'bg-transparent'
         }`}
     >
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
         <a href="#hero" className="flex items-center gap-3 text-lg font-bold text-slate-100">
           <svg viewBox="0 0 36 36" fill="none" className="h-9 w-9">
             <circle cx="18" cy="18" r="16" stroke="url(#lg)" strokeWidth="2" />
@@ -113,24 +113,34 @@ export default function Header() {
       </nav>
 
       <div className={open ? 'block md:hidden' : 'hidden md:hidden'}>
-        <div className="border-t border-white/5 bg-[#0f172a] px-6 py-4">
-          <div className="flex flex-col gap-3">
+        <div className="border-t border-white/5 bg-[#0f172a] px-4 py-4">
+          <div className="flex flex-col gap-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-slate-300 hover:text-white"
-                onClick={() => setOpen(false)}
+                className="rounded-lg px-4 py-3 text-sm text-slate-300 hover:bg-white/5 hover:text-white active:bg-white/10"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.querySelector(item.href);
+                  el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  setOpen(false);
+                }}
               >
                 {item.label}
               </a>
             ))}
           </div>
-          <div className="mt-4">
+          <div className="mt-2 px-2">
             <a
               href="#demo"
-              className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-400/30"
-              onClick={() => setOpen(false)}
+              className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-400/30 active:opacity-90"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.querySelector('#demo');
+                el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setOpen(false);
+              }}
             >
               Запросить демо
             </a>

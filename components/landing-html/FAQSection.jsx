@@ -57,8 +57,8 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section id="faq" className="bg-slate-50 py-20 text-slate-900">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section id="faq" className="bg-slate-50 py-12 sm:py-20 text-slate-900">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeader tag="FAQ" title="Частые вопросы" light />
         <div className="mx-auto max-w-[800px] space-y-4">
           {faqs.map((item, idx) => {
@@ -68,7 +68,7 @@ export default function FAQSection() {
                 <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
                   <button
                     type="button"
-                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition hover:bg-cyan-50"
+                    className="flex w-full items-center justify-between gap-4 px-4 sm:px-6 py-4 sm:py-5 text-left text-sm sm:text-base font-semibold text-slate-900 transition hover:bg-cyan-50"
                     aria-expanded={isOpen}
                     onClick={() => setOpenIndex(isOpen ? null : idx)}
                   >
@@ -84,7 +84,7 @@ export default function FAQSection() {
                     </svg>
                   </button>
                   <div className={`${isOpen ? 'max-h-[500px]' : 'max-h-0'} overflow-hidden transition-all`}>
-                    <div className="px-6 pb-6 text-slate-500">{item.a}</div>
+                    <div className="px-4 sm:px-6 pb-6 text-slate-500 text-sm sm:text-base">{item.a}</div>
                   </div>
                 </div>
               </Reveal>

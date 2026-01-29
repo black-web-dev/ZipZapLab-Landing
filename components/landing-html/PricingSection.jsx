@@ -62,8 +62,8 @@ const ctaClasses = {
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="bg-slate-50 py-20 text-slate-900">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section id="pricing" className="bg-slate-50 py-12 sm:py-20 text-slate-900">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeader
           tag="Тарифы"
           title="Выберите подходящий план"

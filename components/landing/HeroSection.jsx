@@ -1,17 +1,23 @@
-import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import LaserFlow from '@/components/LaserFlow';
-import IOSPhoneComponent from '@/components/landing/IOSPhoneComponent';
-import { Check, ArrowRight, Sparkles, Bot, MessageSquare, Users } from 'lucide-react';
-
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import LaserFlow from "@/components/LaserFlow";
+import IOSPhoneComponent from "@/components/landing/IOSPhoneComponent";
+import {
+  Check,
+  ArrowRight,
+  Sparkles,
+  Bot,
+  MessageSquare,
+  Users,
+} from "lucide-react";
 
 const features = [
-  'RAG‑ответы с цитатами и ссылками на первоисточник',
-  'FAQ-first: эталонные ответы экспертов приоритетнее',
-  'Эскалации на оператора с SLA‑контролем',
-  'Полная управляемость: модель, пороги, маршрутизация',
+  "RAG‑ответы с цитатами и ссылками на первоисточник",
+  "FAQ-first: эталонные ответы экспертов приоритетнее",
+  "Эскалации на оператора с SLA‑контролем",
+  "Полная управляемость: модель, пороги, маршрутизация",
 ];
 
 export default function HeroSection() {
@@ -19,15 +25,14 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen">
-
       {/* Floating Elements */}
       <motion.div
         animate={{
           y: [0, -20, 0],
           rotate: [0, 10, 0],
-          x: [0, 10, 0]
+          x: [0, 10, 0],
         }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-32 right-[15%] hidden xl:block"
       >
         <div className="p-4 rounded-2xl bg-gradient-to-br from-neutral-800/80 to-neutral-900/80 backdrop-blur-sm border border-neutral-700/50 shadow-xl">
@@ -68,8 +73,9 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-lg sm:text-2xl text-neutral-400 leading-relaxed mb-8 max-w-2xl">
-              Работает в Telegram и на сайте, поддерживает текст и голос, даёт управляемое качество:
-              пороги релевантности, FAQ-first, логи и мониторинг.
+              Работает в Telegram и на сайте, поддерживает текст и голос, даёт
+              управляемое качество: пороги релевантности, FAQ-first, логи и
+              мониторинг.
             </p>
 
             <ul className="space-y-2 mb-10">
@@ -95,7 +101,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button
                   size="lg"
                   className="h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5"
@@ -109,10 +118,11 @@ export default function HeroSection() {
                   </motion.div>
                 </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <button
-                  className="inline-flex h-12 items-center rounded-xl border-2 border-cyan-400 px-7 py-3 text-base font-semibold text-cyan-200 transition hover:bg-cyan-400/10"
-                >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <button className="inline-flex h-12 items-center rounded-xl border-2 border-cyan-400 px-7 py-3 text-base font-semibold text-cyan-200 transition hover:bg-cyan-400/10">
                   Админ‑панель
                 </button>
               </motion.div>
@@ -122,22 +132,22 @@ export default function HeroSection() {
       </div>
 
       <div
-        className='h-full w-2/3 absolute top-0 left-1/3 right-0'
+        className="h-[110%] w-2/3 absolute top-0 left-1/3 right-0 overflow-hidden"
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
           const el = revealImgRef.current;
           if (el) {
-            el.style.setProperty('--mx', `${x}px`);
-            el.style.setProperty('--my', `${y}px`);
+            el.style.setProperty("--mx", `${x}px`);
+            el.style.setProperty("--my", `${y}px`);
           }
         }}
         onMouseLeave={() => {
           const el = revealImgRef.current;
           if (el) {
-            el.style.setProperty('--mx', '-9999px');
-            el.style.setProperty('--my', '-9999px');
+            el.style.setProperty("--mx", "-9999px");
+            el.style.setProperty("--my", "-9999px");
           }
         }}
       >
@@ -145,49 +155,55 @@ export default function HeroSection() {
         <div
           className="absolute inset-0 -z-10"
           style={{
-            backgroundImage: 'url(/background.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'brightness(1.1) contrast(1.1) saturate(0.9)',
+            backgroundImage: "url(/background.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(1.1) contrast(1.1) saturate(0.9)",
             opacity: 1,
-            WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
-            maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
-            WebkitMaskComposite: 'intersect',
-            maskComposite: 'intersect',
+            WebkitMaskImage:
+              "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+            maskImage:
+              "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 98%)",
+            WebkitMaskComposite: "intersect",
+            maskComposite: "intersect",
           }}
         />
 
-        <LaserFlow
-          horizontalBeamOffset={0.1}
-          verticalBeamOffset={0.36}
-          horizontalSizing={0.7}
-          verticalSizing={0.7}
-          flowStrength={0.15}
-          fogIntensity={0.1}
-          fogScale={0.5}
-          fogFallSpeed={0.6}
-          wispIntensity={1}
-          falloffStart={0.5}
-          flowSpeed={0.2}
-          wispSpeed={15}
-          wispDensity={4}
-          decay={0.5}
-          color="#B18DE0"
-        />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[130%] h-full">
+          <LaserFlow
+            horizontalBeamOffset={0.078}
+            verticalBeamOffset={0.36}
+            horizontalSizing={0.4}
+            verticalSizing={0.55}
+            flowStrength={0.15}
+            fogIntensity={0.2}
+            fogScale={0.5}
+            fogFallSpeed={0.5}
+            wispIntensity={1}
+            falloffStart={0.5}
+            flowSpeed={0.2}
+            wispSpeed={15}
+            wispDensity={4}
+            decay={0.5}
+            color="#B18DE0"
+          />
+        </div>
 
-        <div style={{
-          position: 'absolute',
-          top: '13%',
-          left: '60%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
-          fontSize: '2rem',
-          zIndex: 6
-        }}>
+        <div
+          style={{
+            position: "absolute",
+            top: "13%",
+            left: "60%",
+            transform: "translateX(-50%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "white",
+            fontSize: "2rem",
+            zIndex: 6,
+          }}
+        >
           {/* iOS Phone Component */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -204,19 +220,21 @@ export default function HeroSection() {
           src="/background.webp"
           alt="Reveal effect"
           style={{
-            position: 'absolute',
-            width: '100%',
-            top: '0%',
+            position: "absolute",
+            width: "100%",
+            top: "0%",
             zIndex: 5,
-            mixBlendMode: 'lighten',
+            mixBlendMode: "lighten",
             opacity: 0.3,
-            pointerEvents: 'none',
-            '--mx': '-9999px',
-            '--my': '-9999px',
-            WebkitMaskImage: 'radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)',
-            maskImage: 'radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)',
-            WebkitMaskRepeat: 'no-repeat',
-            maskRepeat: 'no-repeat'
+            pointerEvents: "none",
+            "--mx": "-9999px",
+            "--my": "-9999px",
+            WebkitMaskImage:
+              "radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)",
+            maskImage:
+              "radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
           }}
           horizontalBeamOffset={0.27}
           verticalBeamOffset={0.34}
@@ -239,9 +257,14 @@ export default function HeroSection() {
         animate={{
           y: [0, 20, 0],
           rotate: [0, -10, 0],
-          x: [0, -15, 0]
+          x: [0, -15, 0],
         }}
-        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+        transition={{
+          duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.5,
+        }}
         className="absolute bottom-40 left-[10%] hidden xl:block"
       >
         <div className="p-4 rounded-2xl bg-gradient-to-br from-neutral-800/80 to-neutral-900/80 backdrop-blur-sm border border-neutral-700/50 shadow-xl">

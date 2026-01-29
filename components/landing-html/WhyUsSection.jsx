@@ -15,13 +15,13 @@ const items = [
 
 export default function WhyUsSection() {
   return (
-    <section id="why" className="py-20">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section id="why" className="py-12 sm:py-20">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeader tag="Почему мы" title="Сильны там, где чат‑боты ломаются" />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-3 h-full">
           {items.map((item) => (
             <Reveal key={item.title}>
-              <div className="rounded-xl border border-white/5 bg-[#1e293b] p-6">
+              <div className="h-full rounded-xl border border-white/5 bg-[#1e293b] p-6">
                 <h3 className="mb-2 text-lg font-semibold text-slate-100">{item.title}</h3>
                 <p className="text-slate-300">{item.desc}</p>
               </div>

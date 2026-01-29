@@ -27,8 +27,8 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="how" className="py-20">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section id="how" className="py-12 sm:py-20">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeader
           tag="Как работает"
           title="5 шагов от вопроса до ответа"
@@ -37,7 +37,7 @@ export default function HowItWorksSection() {
         <div className="space-y-4">
           {steps.map((step, index) => (
             <Reveal key={step.title}>
-              <div className="flex items-start gap-6 rounded-xl border border-white/5 bg-[#1e293b] p-6 transition hover:border-cyan-400/60">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 rounded-xl border border-white/5 bg-[#1e293b] p-4 sm:p-6 transition hover:border-cyan-400/60">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 to-emerald-500 text-lg font-bold text-white">
                   {index + 1}
                 </div>

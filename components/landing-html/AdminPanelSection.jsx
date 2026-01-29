@@ -44,8 +44,8 @@ export default function AdminPanelSection() {
   });
 
   return (
-    <section id="admin" className="bg-slate-50 py-20 text-slate-900">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section id="admin" className="bg-slate-50 py-12 sm:py-20 text-slate-900">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeader
           tag="Админ‑панель"
           title="Тонкие настройки для управления качеством"

@@ -11,8 +11,8 @@ export default function SectionHeader({ tag, title, description, light = false }
         <span className={`mb-4 inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ${tagClass}`}>
           {tag}
         </span>
-        <h2 className={`mb-4 text-2xl font-bold sm:text-4xl ${titleClass}`}>{title}</h2>
-        {description ? <p className={`text-lg ${descClass}`}>{description}</p> : null}
+        <h2 className={`mb-4 text-xl font-bold sm:text-2xl md:text-4xl ${titleClass}`}>{title}</h2>
+        {description ? <p className={`text-base sm:text-lg ${descClass}`}>{description}</p> : null}
       </div>
     </Reveal>
   );
