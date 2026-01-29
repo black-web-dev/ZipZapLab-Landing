@@ -98,7 +98,7 @@ export default function HeroSection() {
             </ul>
 
             <motion.div
-              className="flex flex-wrap gap-2 sm:gap-4"
+              className="flex flex-col lg:flex-row gap-2 sm:gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
@@ -109,7 +109,7 @@ export default function HeroSection() {
               >
                 <Button
                   size="lg"
-                  className="h-9 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-4 py-2 sm:px-7 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5"
+                  className="w-full lg:w-auto h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 px-4 py-2 sm:px-7 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-lg shadow-cyan-400/30 transition hover:-translate-y-0.5"
                   onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 >
                   Запросить демо
@@ -126,7 +126,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <button
-                  className="inline-flex h-9 sm:h-12 items-center rounded-lg sm:rounded-xl border-2 border-cyan-400 px-4 py-2 sm:px-7 sm:py-3 text-sm sm:text-base font-semibold text-cyan-200 transition hover:bg-cyan-400/10"
+                  className="w-full lg:w-auto inline-flex h-12 items-center justify-center rounded-lg sm:rounded-xl border-2 border-cyan-400 px-4 py-2 sm:px-7 sm:py-3 text-sm sm:text-base font-semibold text-cyan-200 text-center transition hover:bg-cyan-400/10"
                   onClick={() => document.getElementById('admin')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 >
                   Админ‑панель
