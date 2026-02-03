@@ -41,7 +41,7 @@ export default function HeroSection() {
       </motion.div>
 
       <div className="relative z-0 w-full max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-8 -mt-10 lg:mt-0 pt-0 pb-12 sm:pb-16 lg:py-32">
-        <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex flex-col lg:flex-row items-center mx-6 lg:mx-0">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -72,7 +72,7 @@ export default function HeroSection() {
               <span className="text-neutral-100">агент техподдержки</span>
             </h1>
 
-            <p className="text-sm sm:text-base lg:text-2xl text-neutral-400 leading-relaxed mb-5 sm:mb-8 max-w-xl sm:max-w-2xl">
+            <p className="text-base lg:text-2xl text-neutral-400 leading-relaxed mb-5 sm:mb-8 max-w-xl sm:max-w-2xl">
               Работает в Telegram и на сайте, поддерживает текст и голос, даёт
               управляемое качество: пороги релевантности, FAQ-first, логи и
               мониторинг.
@@ -87,10 +87,10 @@ export default function HeroSection() {
                   transition={{ delay: 0.4 + idx * 0.1 }}
                   className="flex items-start gap-2 sm:gap-3"
                 >
-                  <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-neutral-700/80 flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-cyan-400/60 flex items-center justify-center mt-0.5">
                     <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
                   </div>
-                  <span className="text-neutral-300 text-xs sm:text-sm lg:text-base">
+                  <span className="text-neutral-300 text-sm lg:text-base">
                     {feature}
                   </span>
                 </motion.li>
@@ -243,13 +243,29 @@ export default function HeroSection() {
                 </div>
               </motion.div>
 
-              <h1 className="text-2xl sm:text-4xl font-bold text-white leading-[1.1] mb-6 sm:mb-10">
-                <span className="bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-200 bg-clip-text text-transparent">
-                  ZipZap Agent
-                </span>
+              <h1 className="relative z-20 hero-neon-text text-2xl sm:text-4xl font-bold text-white leading-[1.1] mb-6 sm:mb-10">
+                ZipZap Agent
                 <br />
-                <span className="text-neutral-100">агент техподдержки</span>
+                агент техподдержки
               </h1>
+              <style>{`
+                .hero-neon-text {
+                  color: #fff;
+                  text-shadow: 0 0 5px #B18DE0, 0 0 10px #B18DE0, 0 0 20px #B18DE0, 0 0 40px #B18DE0, 0 0 80px #B18DE0;
+                  animation: hero-neon-glow 3s infinite alternate;
+                }
+                @keyframes hero-neon-glow {
+                  0% {
+                    text-shadow: 0 0 5px #B18DE0, 0 0 10px #B18DE0, 0 0 20px #B18DE0, 0 0 40px #B18DE0, 0 0 80px #B18DE0;
+                  }
+                  50% {
+                    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
+                  }
+                  100% {
+                    text-shadow: 0 0 5px #B18DE0, 0 0 10px #B18DE0, 0 0 20px #B18DE0, 0 0 40px #B18DE0, 0 0 80px #B18DE0;
+                  }
+                }
+              `}</style>
             </motion.div>
           </div>
 
